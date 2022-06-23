@@ -10,6 +10,6 @@ public class OtherBeanC {
     BeanC beanC;
 
     public OtherBeanC() {
-        System.out.println(beanC);
+        System.out.println(beanC); //null, бо field-injection відбувається до виклику конструктора
     }
 }
