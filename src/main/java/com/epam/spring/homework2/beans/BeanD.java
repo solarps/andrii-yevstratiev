@@ -13,7 +13,7 @@ public class BeanD extends AbstractBean {
     public BeanD() {
     }
 
-    public BeanD(String name, String value) {
+    public BeanD(String name, Integer value) {
         super(name, value);
     }
 

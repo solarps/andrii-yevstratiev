@@ -11,7 +11,7 @@ public class BeanC extends AbstractBean {
     public BeanC() {
     }
 
-    public BeanC(String name, String val) {
+    public BeanC(String name, Integer val) {
         super(name, val);
     }
 

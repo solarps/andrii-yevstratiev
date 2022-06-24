@@ -5,18 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f47b786-c2ce-4102-a715-0b2fe4b1ebed" name="Changes" comment="initialize project with spring-context and javax.annotation-api dependencies">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework2/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework2/beans/AbstractBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework2/beans/BeanA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework2/beans/BeanB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework2/beans/BeanC.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework2/beans/BeanD.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework2/beans/BeanE.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework2/beans/BeanF.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework2/config/FirstConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework2/config/SecondConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/dev.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework2/postprocessors/BeanValidatorPostProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework2/postprocessors/CustomBeanFactoryPostProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework2/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework2/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework2/beans/AbstractBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework2/beans/AbstractBean.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework2/beans/BeanB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework2/beans/BeanB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework2/beans/BeanC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework2/beans/BeanC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework2/beans/BeanD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework2/beans/BeanD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework2/config/FirstConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework2/config/FirstConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dev.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dev.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +24,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="package-info" />
         <option value="Class" />
       </list>
     </option>
@@ -33,14 +32,24 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="2AyCnwUxdTV6WVSOKqPsZgIKLXD" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "node.js.selected.package.tslint": "(autodetect)"
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "spring.configuration.checksum": "3c01a3601795f4cff5f5c9428993a51e"
   }
 }]]></component>
   <component name="RunManager">
@@ -71,6 +80,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1655972610349</updated>
+      <workItem from="1656091877091" duration="2845000" />
     </task>
     <task id="LOCAL-00001" summary="initialize project with spring-context and javax.annotation-api dependencies">
       <created>1656066228869</created>
@@ -82,12 +92,27 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HW2" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
