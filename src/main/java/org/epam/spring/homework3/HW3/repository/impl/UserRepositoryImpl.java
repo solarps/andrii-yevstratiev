@@ -1,7 +1,7 @@
-package org.epam.spring.homework3.HW3.service.repository.impl;
+package org.epam.spring.homework3.HW3.repository.impl;
 
+import org.epam.spring.homework3.HW3.repository.UserRepository;
 import org.epam.spring.homework3.HW3.service.model.User;
-import org.epam.spring.homework3.HW3.service.repository.UserRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.server.ResponseStatusException;

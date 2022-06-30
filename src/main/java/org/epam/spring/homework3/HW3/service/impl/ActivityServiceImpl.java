@@ -6,7 +6,7 @@ import org.epam.spring.homework3.HW3.controller.dto.ActivityDTO;
 import org.epam.spring.homework3.HW3.service.ActivityService;
 import org.epam.spring.homework3.HW3.service.mapper.ActivityMapper;
 import org.epam.spring.homework3.HW3.service.model.Activity;
-import org.epam.spring.homework3.HW3.service.repository.ActivityRepository;
+import org.epam.spring.homework3.HW3.repository.ActivityRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

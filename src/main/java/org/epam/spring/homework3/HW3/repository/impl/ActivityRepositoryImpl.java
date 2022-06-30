@@ -1,7 +1,7 @@
-package org.epam.spring.homework3.HW3.service.repository.impl;
+package org.epam.spring.homework3.HW3.repository.impl;
 
+import org.epam.spring.homework3.HW3.repository.ActivityRepository;
 import org.epam.spring.homework3.HW3.service.model.Activity;
-import org.epam.spring.homework3.HW3.service.repository.ActivityRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
