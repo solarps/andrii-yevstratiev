@@ -16,5 +16,7 @@ public interface ActivityRepository {
     Activity updateActivity(String id, Activity activity);
 
     void deleteActivity(String id);
+
     Boolean isActivityExists(String id);
+
 }

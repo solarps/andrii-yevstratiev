@@ -38,7 +38,8 @@ public class ActivityRepositoryImpl implements ActivityRepository {
         activities.remove(id);
     }
 
-    public Boolean isActivityExists(String id){
+    @Override
+    public Boolean isActivityExists(String id) {
         return activities.containsKey(id);
     }
 }
