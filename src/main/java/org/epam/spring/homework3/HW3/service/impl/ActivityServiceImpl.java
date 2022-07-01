@@ -3,11 +3,11 @@ package org.epam.spring.homework3.HW3.service.impl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.epam.spring.homework3.HW3.controller.dto.ActivityDTO;
+import org.epam.spring.homework3.HW3.repository.ActivityRepository;
 import org.epam.spring.homework3.HW3.repository.UserRepository;
 import org.epam.spring.homework3.HW3.service.ActivityService;
 import org.epam.spring.homework3.HW3.service.mapper.ActivityMapper;
 import org.epam.spring.homework3.HW3.service.model.Activity;
-import org.epam.spring.homework3.HW3.repository.ActivityRepository;
 import org.epam.spring.homework3.HW3.service.model.User;
 import org.springframework.stereotype.Service;
 
@@ -61,6 +61,7 @@ public class ActivityServiceImpl implements ActivityService {
         userRepository.listUsers().forEach(user -> {
             if (userHasActivity(user, id)) {
                 user.getActivities().removeIf(activity -> activity.getId().equals(id));
+                if (user.getActivities().size() == 0) user.setActivities(null);
             }
         });
     }

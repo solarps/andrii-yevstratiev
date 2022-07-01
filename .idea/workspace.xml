@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f47b786-c2ce-4102-a715-0b2fe4b1ebed" name="Changes" comment="fixed business logic">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/repository/impl/ActivityRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/repository/impl/ActivityRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/repository/impl/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/repository/impl/UserRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/service/impl/ActivityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/service/impl/ActivityServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/service/model/Activity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/service/model/Activity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +28,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="HW3" />
+        <entry key="$PROJECT_DIR$" value="HW4" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -155,19 +152,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="HW3" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
