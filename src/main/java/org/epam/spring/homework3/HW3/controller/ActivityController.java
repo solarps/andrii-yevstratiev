@@ -36,6 +36,7 @@ public class ActivityController {
     @PutMapping("/activity/{id}")
     public ActivityDTO updateActivity(@PathVariable String id, @RequestBody ActivityDTO activityDTO) {
         log.info("Controller: update activity by id: {}", id);
+        activityDTO.setId(id);
         return activityService.updateActivity(id, activityDTO);
     }
 

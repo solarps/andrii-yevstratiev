@@ -13,7 +13,7 @@ public interface UserRepository {
 
     User createUser(User user);
 
-    User updateUser(String login, User user);
+    User updateUser(String oldLogin, User user);
 
     void deleteUser(String login);
 }

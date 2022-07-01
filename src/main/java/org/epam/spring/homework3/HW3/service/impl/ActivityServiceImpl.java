@@ -3,10 +3,12 @@ package org.epam.spring.homework3.HW3.service.impl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.epam.spring.homework3.HW3.controller.dto.ActivityDTO;
+import org.epam.spring.homework3.HW3.repository.UserRepository;
 import org.epam.spring.homework3.HW3.service.ActivityService;
 import org.epam.spring.homework3.HW3.service.mapper.ActivityMapper;
 import org.epam.spring.homework3.HW3.service.model.Activity;
 import org.epam.spring.homework3.HW3.repository.ActivityRepository;
+import org.epam.spring.homework3.HW3.service.model.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,6 +19,8 @@ import java.util.List;
 public class ActivityServiceImpl implements ActivityService {
 
     private final ActivityRepository activityRepository;
+
+    private final UserRepository userRepository;
 
     @Override
     public ActivityDTO createActivity(ActivityDTO activityDTO) {
@@ -42,6 +46,11 @@ public class ActivityServiceImpl implements ActivityService {
     public ActivityDTO updateActivity(String id, ActivityDTO activityDTO) {
         log.info("Service: update activity by id:{}", id);
         Activity activity = activityRepository.updateActivity(id, ActivityMapper.instance.mapToActivity(activityDTO));
+        userRepository.listUsers().forEach(user -> {
+            if (userHasActivity(user, id)) {
+                user.getActivities().set(user.getActivities().indexOf(activity), ActivityMapper.instance.mapToActivity(activityDTO));
+            }
+        });
         return ActivityMapper.instance.mapToActivityDTO(activity);
     }
 
@@ -49,5 +58,15 @@ public class ActivityServiceImpl implements ActivityService {
     public void deleteActivity(String id) {
         log.info("Service: delete activity by id: {}", id);
         activityRepository.deleteActivity(id);
+        userRepository.listUsers().forEach(user -> {
+            if (userHasActivity(user, id)) {
+                user.getActivities().removeIf(activity -> activity.getId().equals(id));
+            }
+        });
     }
+
+    private boolean userHasActivity(User user, String id) {
+        return user.getActivities().stream().anyMatch(activity -> activity.getId().equals(id));
+    }
+
 }

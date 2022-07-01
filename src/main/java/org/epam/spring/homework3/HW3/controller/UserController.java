@@ -41,10 +41,10 @@ public class UserController {
     }
 
     @ResponseStatus(HttpStatus.OK)
-    @PutMapping("/user/{login}")
-    public UserDTO updateUser(@PathVariable String login, @RequestBody UserDTO userDTO) {
-        log.info("Controller: update user by login: {}", login);
-        return userService.updateUser(login, userDTO);
+    @PutMapping("/user/{oldLogin}")
+    public UserDTO updateUser(@PathVariable String oldLogin, @RequestBody UserDTO userDTO) {
+        log.info("Controller: update user by login: {}, new user:{}", oldLogin, userDTO);
+        return userService.updateUser(oldLogin, userDTO);
     }
 
     @ResponseStatus(HttpStatus.OK)

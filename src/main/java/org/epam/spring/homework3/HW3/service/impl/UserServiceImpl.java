@@ -45,9 +45,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDTO updateUser(String login, UserDTO user) {
-        log.info("Service: update user by login: {}", login);
-        User oldUser = userRepository.updateUser(login, UserMapper.instance.mapToUser(user));
+    public UserDTO updateUser(String oldLogin, UserDTO user) {
+        log.info("Service: update user by oldLogin: {}", oldLogin);
+        User oldUser = userRepository.updateUser(oldLogin, UserMapper.instance.mapToUser(user));
         return UserMapper.instance.mapToUserDTO(oldUser);
     }
 
