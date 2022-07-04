@@ -1,11 +1,12 @@
-package org.epam.spring.homework3.HW3.repository.impl;
+package org.epam.spring.homework3.HW3.service.repository.impl;
 
 import lombok.extern.slf4j.Slf4j;
-import org.epam.spring.homework3.HW3.repository.UserRepository;
+import org.epam.spring.homework3.HW3.service.repository.UserRepository;
+import org.epam.spring.homework3.HW3.service.exception.EntityExistsException;
+import org.epam.spring.homework3.HW3.service.exception.EntityNotFoundException;
 import org.epam.spring.homework3.HW3.service.model.User;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
-import org.springframework.web.server.ResponseStatusException;
+
 
 import java.util.*;
 
@@ -18,7 +19,8 @@ public class UserRepositoryImpl implements UserRepository {
     @Override
     public User getUserByLogin(String login) {
         log.info("Repository: get user by login: {}", login);
-        return users.get(login);
+        if (users.containsKey(login)) return users.get(login);
+        else throw new EntityNotFoundException("User not found");
     }
 
     @Override
@@ -34,8 +36,7 @@ public class UserRepositoryImpl implements UserRepository {
             users.put(user.getLogin(), user);
             return user;
         } else {
-
-            throw new ResponseStatusException(HttpStatus.I_AM_A_TEAPOT);
+            throw new EntityExistsException("User already exists");
         }
     }
 
@@ -43,14 +44,15 @@ public class UserRepositoryImpl implements UserRepository {
     public User updateUser(String oldLogin, User user) {
         log.info("Repository: update user by login:{}", oldLogin);
         if (users.containsKey(oldLogin)) {
-            users.put(user.getLogin(),user);
+            users.put(user.getLogin(), user);
             return users.remove(oldLogin);
-        } else throw new RuntimeException("User doesn't exists");
+        } else throw new EntityNotFoundException("User not found");
     }
 
     @Override
     public void deleteUser(String login) {
         log.info("Repository: delete user by login:{}", login);
+        if (!users.containsKey(login)) throw new EntityNotFoundException("User not found");
         users.remove(login);
     }
 }

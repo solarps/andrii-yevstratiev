@@ -5,13 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1f47b786-c2ce-4102-a715-0b2fe4b1ebed" name="Changes" comment="fixed business logic">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/controller/validation/ErrorHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/service/exception/EntityExistsException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/service/exception/EntityNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/service/exception/ServiceException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/service/model/Error.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/service/model/enums/ErrorType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/repository/impl/ActivityRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/repository/impl/ActivityRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/repository/impl/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/repository/impl/UserRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/repository/ActivityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/service/repository/ActivityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/service/repository/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/repository/impl/ActivityRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/service/repository/impl/ActivityRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/repository/impl/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/service/repository/impl/UserRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/service/impl/ActivityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/service/impl/ActivityServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework3/HW3/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +31,9 @@
       <list>
         <option value="spring-beans.schema" />
         <option value="Tag Library Descriptor" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -68,6 +77,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.epam.spring.homework3.HW3.repository.exception" />
       <recent name="org.epam.spring.homework3.HW3.service.model" />
       <recent name="org.epam.spring.homework3.HW3.controller.dto" />
     </key>
@@ -93,7 +103,9 @@
       <workItem from="1656531828908" duration="6839000" />
       <workItem from="1656577426365" duration="8297000" />
       <workItem from="1656603552981" duration="8308000" />
-      <workItem from="1656676768048" duration="4069000" />
+      <workItem from="1656676768048" duration="5519000" />
+      <workItem from="1656757453500" duration="330000" />
+      <workItem from="1656937953381" duration="7791000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1656523769715</created>
@@ -144,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1656679203000</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fixed business logic">
+      <created>1656681024994</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1656681024994</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,7 +180,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="HW3" />
+                        <option value="HW4" />
                       </list>
                     </value>
                   </entry>

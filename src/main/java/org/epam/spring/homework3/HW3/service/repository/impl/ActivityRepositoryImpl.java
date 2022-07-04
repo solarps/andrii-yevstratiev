@@ -1,7 +1,9 @@
-package org.epam.spring.homework3.HW3.repository.impl;
+package org.epam.spring.homework3.HW3.service.repository.impl;
 
 import lombok.extern.slf4j.Slf4j;
-import org.epam.spring.homework3.HW3.repository.ActivityRepository;
+import org.epam.spring.homework3.HW3.service.repository.ActivityRepository;
+import org.epam.spring.homework3.HW3.service.exception.EntityExistsException;
+import org.epam.spring.homework3.HW3.service.exception.EntityNotFoundException;
 import org.epam.spring.homework3.HW3.service.model.Activity;
 import org.springframework.stereotype.Repository;
 
@@ -22,27 +24,35 @@ public class ActivityRepositoryImpl implements ActivityRepository {
     @Override
     public Activity getActivityById(String id) {
         log.info("Repository: get activity by id");
-        return activities.get(id);
+        if (activities.containsKey(id)) return activities.get(id);
+        else throw new EntityNotFoundException("Activity not found");
     }
 
     @Override
     public Activity createActivity(Activity activity) {
         log.info("Repository: create activity:{} ", activity);
-        activity.setId(UUID.randomUUID().toString());
-        activities.put(activity.getId(), activity);
-        return activity;
+        if (activities.values()
+                .stream()
+                .noneMatch(activity1 -> activity1.getName().equals(activity.getName())
+                        && activity1.getCategory().equals(activity.getCategory()))) {
+            activity.setId(UUID.randomUUID().toString());
+            activities.put(activity.getId(), activity);
+            return activity;
+        } else throw new EntityExistsException("Activity already exists");
     }
 
     @Override
     public Activity updateActivity(String id, Activity activity) {
         log.info("Repository: update activity by id: {}", id);
-        return activities.put(id, activity);
+        if (activities.containsKey(id)) return activities.put(id, activity);
+        else throw new EntityNotFoundException("Activity not found");
     }
 
     @Override
     public void deleteActivity(String id) {
         log.info("Repository: delete activity by id: {}", id);
-        activities.remove(id);
+        if (activities.containsKey(id)) activities.remove(id);
+        else throw new EntityNotFoundException("Activity not found");
     }
 
     @Override

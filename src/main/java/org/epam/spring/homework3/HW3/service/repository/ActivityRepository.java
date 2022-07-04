@@ -1,4 +1,4 @@
-package org.epam.spring.homework3.HW3.repository;
+package org.epam.spring.homework3.HW3.service.repository;
 
 import org.epam.spring.homework3.HW3.service.model.Activity;
 
