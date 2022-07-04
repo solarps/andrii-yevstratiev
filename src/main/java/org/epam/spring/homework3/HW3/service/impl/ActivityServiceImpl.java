@@ -61,6 +61,7 @@ public class ActivityServiceImpl implements ActivityService {
         userRepository.listUsers().forEach(user -> {
             if (userHasActivity(user, id)) {
                 user.getActivities().removeIf(activity -> activity.getId().equals(id));
+                if (user.getActivities().size() == 0) user.setActivities(null);
             }
         });
     }

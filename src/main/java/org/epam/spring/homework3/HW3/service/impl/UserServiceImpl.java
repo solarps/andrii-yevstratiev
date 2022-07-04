@@ -5,6 +5,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.epam.spring.homework3.HW3.controller.dto.ActivityDTO;
 import org.epam.spring.homework3.HW3.controller.dto.UserDTO;
 import org.epam.spring.homework3.HW3.service.UserService;
+import org.epam.spring.homework3.HW3.service.exception.EntityExistsException;
+import org.epam.spring.homework3.HW3.service.exception.EntityNotFoundException;
 import org.epam.spring.homework3.HW3.service.mapper.UserMapper;
 import org.epam.spring.homework3.HW3.service.model.User;
 import org.epam.spring.homework3.HW3.service.repository.ActivityRepository;
@@ -13,6 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
@@ -61,13 +64,15 @@ public class UserServiceImpl implements UserService {
     public UserDTO addActivity(String login, String id) {
         log.info("Service: add activity {} for user: {}", id, login);
         User user = userRepository.getUserByLogin(login);
-        if (activityRepository.isActivityExists(id) &&
-                user.getActivities().stream().noneMatch(activity -> activity.getId().equals(id))) {
-            user.getActivities().add(activityRepository.getActivityById(id));
-            return UserMapper.instance.mapToUserDTO(user);
-        } else {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
-        }
+        if (activityRepository.isActivityExists(id)) {
+            if (user.getActivities() == null) {
+                user.setActivities(new ArrayList<>());
+            }
+            if (user.getActivities().stream().noneMatch(activity -> activity.getId().equals(id))) {
+                user.getActivities().add(activityRepository.getActivityById(id).clone());
+                return UserMapper.instance.mapToUserDTO(user);
+            } else throw new EntityExistsException("User already follows this activity");
+        } else throw new EntityNotFoundException("Activity not found");
     }
 
     @Override

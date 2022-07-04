@@ -5,9 +5,12 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.epam.spring.homework3.HW3.controller.dto.ActivityDTO;
 import org.epam.spring.homework3.HW3.controller.dto.UserDTO;
+import org.epam.spring.homework3.HW3.controller.dto.validategroup.OnCreate;
+import org.epam.spring.homework3.HW3.controller.dto.validategroup.OnUpdate;
 import org.epam.spring.homework3.HW3.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -35,14 +38,14 @@ public class UserController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("/user")
-    public UserDTO createUser(@RequestBody UserDTO userDTO) {
+    public UserDTO createUser(@Validated(OnCreate.class) @RequestBody UserDTO userDTO) {
         log.info("Controller: create user: {}", userDTO);
         return userService.createUser(userDTO);
     }
 
     @ResponseStatus(HttpStatus.OK)
     @PutMapping("/user/{oldLogin}")
-    public UserDTO updateUser(@PathVariable String oldLogin, @RequestBody UserDTO userDTO) {
+    public UserDTO updateUser(@PathVariable String oldLogin, @Validated(OnUpdate.class) @RequestBody UserDTO userDTO) {
         log.info("Controller: update user by login: {}, new user:{}", oldLogin, userDTO);
         return userService.updateUser(oldLogin, userDTO);
     }
