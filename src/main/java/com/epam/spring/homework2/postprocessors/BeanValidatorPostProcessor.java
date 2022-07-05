@@ -7,25 +7,24 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BeanValidatorPostProcessor implements BeanPostProcessor {
-
-
-    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        if (bean instanceof AbstractBean) {
-            validate((AbstractBean) bean);
-        }
-        return bean;
+  public Object postProcessBeforeInitialization(Object bean, String beanName)
+      throws BeansException {
+    if (bean instanceof AbstractBean) {
+      validate((AbstractBean) bean);
     }
+    return bean;
+  }
 
-    private void validate(AbstractBean abstractBean) {
-        if (abstractBean.getName() == null) {
-            abstractBean.setName("Default");
-        }
-        if (abstractBean.getValue() == null || abstractBean.getValue() < 0) {
-            abstractBean.setValue(1);
-        }
+  private void validate(AbstractBean abstractBean) {
+    if (abstractBean.getName() == null) {
+      abstractBean.setName("Default");
     }
+    if (abstractBean.getValue() == null || abstractBean.getValue() < 0) {
+      abstractBean.setValue(1);
+    }
+  }
 
-    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        return bean;
-    }
+  public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+    return bean;
+  }
 }

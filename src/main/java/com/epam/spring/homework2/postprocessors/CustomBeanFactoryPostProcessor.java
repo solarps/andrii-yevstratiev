@@ -7,8 +7,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class CustomBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
-    @Override
-    public void postProcessBeanFactory(ConfigurableListableBeanFactory configurableListableBeanFactory) throws BeansException {
-        configurableListableBeanFactory.getBeanDefinition("beanB").setInitMethodName("anotherInitBean");
-    }
+  @Override
+  public void postProcessBeanFactory(
+      ConfigurableListableBeanFactory configurableListableBeanFactory) throws BeansException {
+    configurableListableBeanFactory.getBeanDefinition("beanB").setInitMethodName("anotherInitBean");
+  }
 }

@@ -11,21 +11,20 @@ import org.springframework.context.annotation.*;
 @Import(SecondConfig.class)
 @PropertySource("classpath:dev.properties")
 public class FirstConfig {
+  @Bean(initMethod = "initBean", destroyMethod = "destroyBean")
+  public BeanD beanD(@Value("${beanD.name}") String name, @Value("${beanD.value}") Integer val) {
+    return new BeanD(name, val);
+  }
 
-    @Bean(initMethod = "initBean", destroyMethod = "destroyBean")
-    public BeanD beanD(@Value("${beanD.name}") String name, @Value("${beanD.value}") Integer val) {
-        return new BeanD(name, val);
-    }
+  @Bean(initMethod = "initBean", destroyMethod = "destroyBean")
+  @DependsOn("beanD")
+  public BeanB beanB(@Value("${beanB.name}") String name, @Value("${beanB.value}") Integer val) {
+    return new BeanB(name, val);
+  }
 
-    @Bean(initMethod = "initBean", destroyMethod = "destroyBean")
-    @DependsOn("beanD")
-    public BeanB beanB(@Value("${beanB.name}") String name, @Value("${beanB.value}") Integer val) {
-        return new BeanB(name, val);
-    }
-
-    @Bean(initMethod = "initBean", destroyMethod = "destroyBean")
-    @DependsOn("beanB")
-    public BeanC beanC(@Value("${beanC.name}") String name, @Value("${beanC.value}") Integer val) {
-        return new BeanC(name, val);
-    }
+  @Bean(initMethod = "initBean", destroyMethod = "destroyBean")
+  @DependsOn("beanB")
+  public BeanC beanC(@Value("${beanC.name}") String name, @Value("${beanC.value}") Integer val) {
+    return new BeanC(name, val);
+  }
 }
