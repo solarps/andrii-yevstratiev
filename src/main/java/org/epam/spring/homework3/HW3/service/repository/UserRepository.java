@@ -6,14 +6,13 @@ import java.util.List;
 
 public interface UserRepository {
 
+  User getUserByLogin(String login);
 
-    User getUserByLogin(String login);
+  List<User> listUsers();
 
-    List<User> listUsers();
+  User createUser(User user);
 
-    User createUser(User user);
+  User updateUser(String oldLogin, User user);
 
-    User updateUser(String oldLogin, User user);
-
-    void deleteUser(String login);
+  void deleteUser(String login);
 }

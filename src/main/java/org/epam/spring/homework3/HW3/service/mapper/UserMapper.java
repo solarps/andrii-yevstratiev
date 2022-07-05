@@ -10,12 +10,11 @@ import java.util.List;
 @Mapper
 public interface UserMapper {
 
-    UserMapper instance = Mappers.getMapper(UserMapper.class);
+  UserMapper instance = Mappers.getMapper(UserMapper.class);
 
-    UserDTO mapToUserDTO(User user);
+  UserDTO mapToUserDTO(User user);
 
-    User mapToUser(UserDTO userDTO);
+  User mapToUser(UserDTO userDTO);
 
-    List<UserDTO> mapToUserDTOS(List<User> users);
-
+  List<UserDTO> mapToUserDTOS(List<User> users);
 }

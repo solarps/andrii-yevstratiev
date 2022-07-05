@@ -10,11 +10,11 @@ import java.util.List;
 @Mapper
 public interface ActivityMapper {
 
-    ActivityMapper instance = Mappers.getMapper(ActivityMapper.class);
+  ActivityMapper instance = Mappers.getMapper(ActivityMapper.class);
 
-    Activity mapToActivity(ActivityDTO activityDTO);
+  Activity mapToActivity(ActivityDTO activityDTO);
 
-    ActivityDTO mapToActivityDTO(Activity activity);
+  ActivityDTO mapToActivityDTO(Activity activity);
 
-    List<ActivityDTO> mapToActivityDTOS(List<Activity> activities);
+  List<ActivityDTO> mapToActivityDTOS(List<Activity> activities);
 }

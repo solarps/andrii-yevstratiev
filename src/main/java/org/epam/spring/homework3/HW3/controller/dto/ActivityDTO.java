@@ -12,13 +12,20 @@ import static com.fasterxml.jackson.annotation.JsonProperty.Access.READ_ONLY;
 
 @Data
 public class ActivityDTO {
-    @JsonProperty(access = READ_ONLY)
-    private String id;
-    @NotBlank(message = "name shouldn't be empty", groups = {OnCreate.class, OnUpdate.class})
-    private String name;
-    @Null(message = "spent time should be null", groups = OnCreate.class)
-    @NotBlank(message = "name shouldn't be empty", groups = OnUpdate.class)
-    private String spentTime;
-    @NotBlank(message = "name shouldn't be empty", groups = {OnCreate.class, OnUpdate.class})
-    private String category;
+  @JsonProperty(access = READ_ONLY)
+  private String id;
+
+  @NotBlank(
+      message = "name shouldn't be empty",
+      groups = {OnCreate.class, OnUpdate.class})
+  private String name;
+
+  @Null(message = "spent time should be null", groups = OnCreate.class)
+  @NotBlank(message = "name shouldn't be empty", groups = OnUpdate.class)
+  private String spentTime;
+
+  @NotBlank(
+      message = "name shouldn't be empty",
+      groups = {OnCreate.class, OnUpdate.class})
+  private String category;
 }
