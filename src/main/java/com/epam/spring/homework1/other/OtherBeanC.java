@@ -6,10 +6,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class OtherBeanC {
-    @Autowired
-    BeanC beanC;
+  @Autowired private BeanC beanC;
 
-    public OtherBeanC() {
-        System.out.println(beanC); //null, бо field-injection відбувається до виклику сеттерів
-    }
+  public OtherBeanC() {
+    System.out.println(beanC); // null, бо field-injection відбувається до виклику сеттерів
+  }
 }

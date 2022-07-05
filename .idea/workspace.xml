@@ -6,6 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="1f47b786-c2ce-4102-a715-0b2fe4b1ebed" name="Changes" comment="fix pom.xml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/Application.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/beans/BeanA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/beans/BeanA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/beans/BeanB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/beans/BeanB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/beans/BeanC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/beans/BeanC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/config/BeansConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/config/BeansConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/config/OtherConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/config/OtherConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/config/PetConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/config/PetConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/other/OtherBeanA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/other/OtherBeanA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/other/OtherBeanB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/other/OtherBeanB.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/other/OtherBeanC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/other/OtherBeanC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/pet/Animal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/pet/Animal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/pet/Cat.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/pet/Cat.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/pet/Cheetah.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/pet/Cheetah.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/pet/Dog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/pet/Dog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/pet/Pet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/pet/Pet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/pet/Spider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epam/spring/homework1/pet/Spider.java" afterDir="false" />
     </list>
     <list id="681a0bcf-d0e7-4ba5-abb0-97355b207bb8" name="unshelve workspace" comment="unshelve workspace" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,21 +54,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;1290cbae41803510eb50ce15698f2976&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "google-java-format.settings",
+    "spring.configuration.checksum": "1290cbae41803510eb50ce15698f2976"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.epam.spring.homework1.Application" />
