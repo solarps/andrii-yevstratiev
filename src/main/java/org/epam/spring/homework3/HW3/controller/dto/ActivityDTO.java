@@ -7,9 +7,10 @@ import static com.fasterxml.jackson.annotation.JsonProperty.Access.READ_ONLY;
 
 @Data
 public class ActivityDTO {
-    @JsonProperty(access = READ_ONLY)
-    private String id;
-    private String name;
-    private String spentTime;
-    private String category;
+  @JsonProperty(access = READ_ONLY)
+  private String id;
+
+  private String name;
+  private String spentTime;
+  private String category;
 }

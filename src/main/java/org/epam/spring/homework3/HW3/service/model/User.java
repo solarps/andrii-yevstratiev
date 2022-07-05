@@ -6,7 +6,7 @@ import java.util.List;
 
 @Data
 public class User {
-    private String name;
-    private String login;
-    private List<Activity> activities;
+  private String name;
+  private String login;
+  private List<Activity> activities;
 }

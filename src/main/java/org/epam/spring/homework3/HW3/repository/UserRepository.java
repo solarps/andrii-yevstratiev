@@ -5,15 +5,13 @@ import org.epam.spring.homework3.HW3.service.model.User;
 import java.util.List;
 
 public interface UserRepository {
+  User getUserByLogin(String login);
 
+  List<User> listUsers();
 
-    User getUserByLogin(String login);
+  User createUser(User user);
 
-    List<User> listUsers();
+  User updateUser(String oldLogin, User user);
 
-    User createUser(User user);
-
-    User updateUser(String oldLogin, User user);
-
-    void deleteUser(String login);
+  void deleteUser(String login);
 }

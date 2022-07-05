@@ -20,62 +20,61 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
+  private final UserRepository userRepository;
+  private final ActivityRepository activityRepository;
 
-    private final UserRepository userRepository;
-    private final ActivityRepository activityRepository;
+  @Override
+  public UserDTO getUserByLogin(String login) {
+    log.info("Service: get user by login: {}", login);
+    User user = userRepository.getUserByLogin(login);
+    return UserMapper.instance.mapToUserDTO(user);
+  }
 
-    @Override
-    public UserDTO getUserByLogin(String login) {
-        log.info("Service: get user by login: {}", login);
-        User user = userRepository.getUserByLogin(login);
+  @Override
+  public List<UserDTO> listUsers() {
+    log.info("Service: get all users");
+    List<User> users = userRepository.listUsers();
+    return UserMapper.instance.mapToUserDTOS(users);
+  }
+
+  @Override
+  public UserDTO createUser(UserDTO user) {
+    log.info("Service: create user: {}", user);
+    User createdUser = userRepository.createUser(UserMapper.instance.mapToUser(user));
+    return UserMapper.instance.mapToUserDTO(createdUser);
+  }
+
+  @Override
+  public UserDTO updateUser(String oldLogin, UserDTO user) {
+    log.info("Service: update user by oldLogin: {}", oldLogin);
+    User oldUser = userRepository.updateUser(oldLogin, UserMapper.instance.mapToUser(user));
+    return UserMapper.instance.mapToUserDTO(oldUser);
+  }
+
+  @Override
+  public void deleteUser(String login) {
+    log.info("Service: delete user by login");
+    userRepository.deleteUser(login);
+  }
+
+  @Override
+  public UserDTO addActivity(String login, String id) {
+    log.info("Service: add activity {} for user: {}", id, login);
+    User user = userRepository.getUserByLogin(login);
+    if (activityRepository.isActivityExists(id)) {
+      if (user.getActivities() == null) {
+        user.setActivities(new ArrayList<>());
+      }
+      if (user.getActivities().stream().noneMatch(activity -> activity.getId().equals(id))) {
+        user.getActivities().add(activityRepository.getActivityById(id).clone());
         return UserMapper.instance.mapToUserDTO(user);
-    }
+      } else throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+    } else throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+  }
 
-    @Override
-    public List<UserDTO> listUsers() {
-        log.info("Service: get all users");
-        List<User> users = userRepository.listUsers();
-        return UserMapper.instance.mapToUserDTOS(users);
-    }
-
-    @Override
-    public UserDTO createUser(UserDTO user) {
-        log.info("Service: create user: {}", user);
-        User createdUser = userRepository.createUser(UserMapper.instance.mapToUser(user));
-        return UserMapper.instance.mapToUserDTO(createdUser);
-    }
-
-    @Override
-    public UserDTO updateUser(String oldLogin, UserDTO user) {
-        log.info("Service: update user by oldLogin: {}", oldLogin);
-        User oldUser = userRepository.updateUser(oldLogin, UserMapper.instance.mapToUser(user));
-        return UserMapper.instance.mapToUserDTO(oldUser);
-    }
-
-    @Override
-    public void deleteUser(String login) {
-        log.info("Service: delete user by login");
-        userRepository.deleteUser(login);
-    }
-
-    @Override
-    public UserDTO addActivity(String login, String id) {
-        log.info("Service: add activity {} for user: {}", id, login);
-        User user = userRepository.getUserByLogin(login);
-        if (activityRepository.isActivityExists(id)) {
-            if (user.getActivities() == null) {
-                user.setActivities(new ArrayList<>());
-            }
-            if (user.getActivities().stream().noneMatch(activity -> activity.getId().equals(id))) {
-                user.getActivities().add(activityRepository.getActivityById(id).clone());
-                return UserMapper.instance.mapToUserDTO(user);
-            } else throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
-        } else throw new ResponseStatusException(HttpStatus.NOT_FOUND);
-    }
-
-    @Override
-    public List<ActivityDTO> getUserActivities(String login) {
-        log.info("Service: get activities for user: {}", login);
-        return getUserByLogin(login).getActivities();
-    }
+  @Override
+  public List<ActivityDTO> getUserActivities(String login) {
+    log.info("Service: get activities for user: {}", login);
+    return getUserByLogin(login).getActivities();
+  }
 }

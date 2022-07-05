@@ -5,13 +5,13 @@ import org.epam.spring.homework3.HW3.controller.dto.ActivityDTO;
 import java.util.List;
 
 public interface ActivityService {
-    ActivityDTO createActivity(ActivityDTO activityDTO);
+  ActivityDTO createActivity(ActivityDTO activityDTO);
 
-    ActivityDTO getActivity(String id);
+  ActivityDTO getActivity(String id);
 
-    List<ActivityDTO> listActivity();
+  List<ActivityDTO> listActivity();
 
-    ActivityDTO updateActivity(String id, ActivityDTO activityDTO);
+  ActivityDTO updateActivity(String id, ActivityDTO activityDTO);
 
-    void deleteActivity(String id);
+  void deleteActivity(String id);
 }

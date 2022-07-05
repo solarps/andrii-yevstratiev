@@ -6,18 +6,17 @@ import org.epam.spring.homework3.HW3.controller.dto.UserDTO;
 import java.util.List;
 
 public interface UserService {
+  UserDTO getUserByLogin(String login);
 
-    UserDTO getUserByLogin(String login);
+  List<UserDTO> listUsers();
 
-    List<UserDTO> listUsers();
+  UserDTO createUser(UserDTO user);
 
-    UserDTO createUser(UserDTO user);
+  UserDTO updateUser(String oldLogin, UserDTO user);
 
-    UserDTO updateUser(String oldLogin, UserDTO user);
+  void deleteUser(String login);
 
-    void deleteUser(String login);
+  UserDTO addActivity(String login, String id);
 
-    UserDTO addActivity(String login, String id);
-
-    List<ActivityDTO> getUserActivities(String login);
+  List<ActivityDTO> getUserActivities(String login);
 }
