@@ -6,13 +6,16 @@ import java.util.List;
 
 @Component
 public class Pet {
-    List<Animal> collection;
+  private final List<Animal> collection;
 
-    public Pet(List<Animal> collection) {
-        this.collection = collection;
-    }
+  public Pet(List<Animal> collection) {
+    this.collection = collection;
+  }
 
-    public void printPets() {
-        collection.forEach(animal -> System.out.println(animal.getClass().getSimpleName()));
-    }
+  public void printPets() {
+    collection.stream()
+        .map(Animal::getClass)
+        .map(Class::getSimpleName)
+        .forEach(System.out::println);
+  }
 }
