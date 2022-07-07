@@ -5,7 +5,6 @@ import org.epam.spring.homework4.HW4.controller.dto.ActivityDTO;
 import java.util.List;
 
 public interface ActivityService {
-
   ActivityDTO createActivity(ActivityDTO activityDTO);
 
   ActivityDTO getActivity(String id);

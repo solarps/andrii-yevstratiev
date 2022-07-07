@@ -9,7 +9,6 @@ import java.util.List;
 
 @Mapper
 public interface UserMapper {
-
   UserMapper instance = Mappers.getMapper(UserMapper.class);
 
   UserDTO mapToUserDTO(User user);

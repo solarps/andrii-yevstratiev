@@ -12,7 +12,6 @@ import java.util.*;
 @Slf4j
 @Repository
 public class ActivityRepositoryImpl implements ActivityRepository {
-
   private final Map<String, Activity> activities = new HashMap<>();
 
   @Override

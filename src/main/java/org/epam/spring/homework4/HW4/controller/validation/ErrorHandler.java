@@ -5,7 +5,6 @@ import org.epam.spring.homework4.HW4.service.exception.EntityExistsException;
 import org.epam.spring.homework4.HW4.service.exception.EntityNotFoundException;
 import org.epam.spring.homework4.HW4.service.model.Error;
 import org.epam.spring.homework4.HW4.service.model.enums.ErrorType;
-import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -13,21 +12,23 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @Slf4j
 @RestControllerAdvice
 public class ErrorHandler {
-
   @ExceptionHandler(MethodArgumentNotValidException.class)
   @ResponseStatus(HttpStatus.BAD_REQUEST)
-  public Error handleMethodArgumentNotValidException(MethodArgumentNotValidException exception) {
-    String errors =
-        exception.getAllErrors().stream()
-            .map(DefaultMessageSourceResolvable::getDefaultMessage)
-            .collect(Collectors.joining(", "));
-    log.error("handleMethodArgumentNotValidException: {}", errors);
-    return new Error(errors, ErrorType.VALIDATION_ERROR_TYPE, LocalDateTime.now());
+  public List<Error> handleMethodArgumentNotValidException(
+      MethodArgumentNotValidException exception) {
+    log.error("handleMethodArgumentNotValidException: {}", exception.getMessage(), exception);
+    return exception.getBindingResult().getAllErrors().stream()
+        .map(
+            err ->
+                new Error(
+                    err.getDefaultMessage(), ErrorType.VALIDATION_ERROR_TYPE, LocalDateTime.now()))
+        .collect(Collectors.toList());
   }
 
   @ExceptionHandler(EntityNotFoundException.class)

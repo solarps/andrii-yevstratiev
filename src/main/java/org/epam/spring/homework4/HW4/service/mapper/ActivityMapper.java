@@ -9,7 +9,6 @@ import java.util.List;
 
 @Mapper
 public interface ActivityMapper {
-
   ActivityMapper instance = Mappers.getMapper(ActivityMapper.class);
 
   Activity mapToActivity(ActivityDTO activityDTO);

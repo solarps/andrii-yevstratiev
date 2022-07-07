@@ -6,7 +6,6 @@ import org.epam.spring.homework4.HW4.controller.dto.UserDTO;
 import java.util.List;
 
 public interface UserService {
-
   UserDTO getUserByLogin(String login);
 
   List<UserDTO> listUsers();

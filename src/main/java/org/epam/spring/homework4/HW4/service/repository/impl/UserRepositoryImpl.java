@@ -15,7 +15,6 @@ import java.util.Map;
 @Slf4j
 @Repository
 public class UserRepositoryImpl implements UserRepository {
-
   private final Map<String, User> users = new HashMap<>();
 
   @Override

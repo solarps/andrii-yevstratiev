@@ -5,7 +5,6 @@ import org.epam.spring.homework4.HW4.service.model.User;
 import java.util.List;
 
 public interface UserRepository {
-
   User getUserByLogin(String login);
 
   List<User> listUsers();

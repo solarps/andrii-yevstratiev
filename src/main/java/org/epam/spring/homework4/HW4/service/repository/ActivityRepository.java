@@ -5,7 +5,6 @@ import org.epam.spring.homework4.HW4.service.model.Activity;
 import java.util.List;
 
 public interface ActivityRepository {
-
   List<Activity> listActivity();
 
   Activity getActivityById(String id);

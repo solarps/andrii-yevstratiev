@@ -17,7 +17,6 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 public class ActivityServiceImpl implements ActivityService {
-
   private final ActivityRepository activityRepository;
 
   private final UserRepository userRepository;
