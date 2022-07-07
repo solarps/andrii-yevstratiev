@@ -4,22 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f47b786-c2ce-4102-a715-0b2fe4b1ebed" name="Changes" comment="add and implement swagger and fix code style">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/validation/SpentTimeConstraint.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/validation/SpentTimeValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/validation/group/OnSetTime.java" afterDir="false" />
+    <list default="true" id="1f47b786-c2ce-4102-a715-0b2fe4b1ebed" name="Changes" comment="added custom SpentTimeValidator using ConstraintValidator">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/validation/config/ValidationConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages-uk.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/i18n/messages.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/api/ActivityAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/api/ActivityAPI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/api/UserApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/api/UserApi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/api/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/api/config/SwaggerConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/ActivityDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/ActivityDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/validategroup/OnCreate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/validation/group/OnCreate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/validategroup/OnUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/validation/group/OnUpdate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/validation/SpentTimeConstraint.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/validation/SpentTimeConstraint.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +25,8 @@
         <option value="Tag Library Descriptor" />
         <option value="Enum" />
         <option value="AnnotationType" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -55,27 +47,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.Java&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;3c01a3601795f4cff5f5c9428993a51e&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/JavaProjects/andrii_yevstratiev/src/main/resources/i18n/messages-uk.properties",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "File.Encoding",
+    "spring.configuration.checksum": "3c01a3601795f4cff5f5c9428993a51e"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.epam.spring.homework4.HW4.controller.dto.validation" />
@@ -126,7 +119,7 @@
       <workItem from="1657041856505" duration="491000" />
       <workItem from="1657178696052" duration="9693000" />
       <workItem from="1657193455808" duration="2151000" />
-      <workItem from="1657204703222" duration="5809000" />
+      <workItem from="1657204703222" duration="9577000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1656523769715</created>
@@ -219,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657196113273</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added custom SpentTimeValidator using ConstraintValidator">
+      <created>1657210615630</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1657210615630</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -259,6 +259,11 @@
     <MESSAGE value="changed root project directory" />
     <MESSAGE value="added actuator and configure '/info' endpoint, change root directory" />
     <MESSAGE value="add and implement swagger and fix code style" />
-    <option name="LAST_COMMIT_MESSAGE" value="add and implement swagger and fix code style" />
+    <MESSAGE value="added custom SpentTimeValidator using ConstraintValidator" />
+    <option name="LAST_COMMIT_MESSAGE" value="added custom SpentTimeValidator using ConstraintValidator" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

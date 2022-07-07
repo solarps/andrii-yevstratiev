@@ -18,20 +18,20 @@ public class ActivityDTO {
   private String id;
 
   @NotBlank(
-      message = "name shouldn't be empty",
+      message ="{name.not.empty}",
       groups = {OnCreate.class, OnUpdate.class})
-  @Null(message = "name should be null", groups = OnSetTime.class)
+  @Null(message = "name.null", groups = OnSetTime.class)
   private String name;
 
   @Null(
-      message = "spent time should be null",
+      message = "{spent-time.null}",
       groups = {OnCreate.class, OnUpdate.class})
   @SpentTimeConstraint(groups = OnSetTime.class)
   private String spentTime;
 
   @NotBlank(
-      message = "name shouldn't be empty",
+      message = "{name.not.empty}",
       groups = {OnCreate.class, OnUpdate.class})
-  @Null(message = "category should be null", groups = OnSetTime.class)
+  @Null(message = "{category.null}", groups = OnSetTime.class)
   private String category;
 }

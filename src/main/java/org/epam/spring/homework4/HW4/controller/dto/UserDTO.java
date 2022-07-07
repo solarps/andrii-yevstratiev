@@ -12,19 +12,19 @@ import java.util.List;
 @Data
 public class UserDTO {
   @NotBlank(
-      message = "name shouldn't be empty",
+      message = "{name.not.empty}",
       groups = {OnCreate.class, OnUpdate.class})
   private String name;
 
   @NotBlank(
-      message = "login shouldn't be empty",
+      message = "{login.not.empty}",
       groups = {OnCreate.class, OnUpdate.class})
   @Pattern(
       regexp = "^(?=.*[A-Za-z0-9]$)[A-Za-z][A-Za-z\\d.-]{4,19}$",
-      message = "login should starts from letter and consist of 4 to 19 characters",
+      message = "{login.validation.error}",
       groups = {OnCreate.class, OnUpdate.class})
   private String login;
 
-  @Null(message = "activities should be null", groups = OnCreate.class)
+  @Null(message = "activities.null", groups = {OnCreate.class,OnUpdate.class})
   private List<ActivityDTO> activities;
 }

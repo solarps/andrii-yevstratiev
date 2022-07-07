@@ -9,7 +9,7 @@ import java.lang.annotation.*;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface SpentTimeConstraint {
-  String message() default "Invalid spent time notation";
+  String message() default "{spent-time.validation.error}";
 
   Class<?>[] groups() default {};
 
