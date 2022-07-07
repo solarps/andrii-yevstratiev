@@ -1,8 +1,8 @@
 package org.epam.spring.homework4.HW4.controller.dto;
 
 import lombok.Data;
-import org.epam.spring.homework4.HW4.controller.dto.validategroup.OnCreate;
-import org.epam.spring.homework4.HW4.controller.dto.validategroup.OnUpdate;
+import org.epam.spring.homework4.HW4.controller.dto.validation.group.OnCreate;
+import org.epam.spring.homework4.HW4.controller.dto.validation.group.OnUpdate;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Null;

@@ -5,7 +5,8 @@ import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.epam.spring.homework4.HW4.controller.dto.ActivityDTO;
-import org.epam.spring.homework4.HW4.controller.dto.validategroup.OnCreate;
+import org.epam.spring.homework4.HW4.controller.dto.validation.group.OnCreate;
+import org.epam.spring.homework4.HW4.controller.dto.validation.group.OnUpdate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -38,7 +39,8 @@ public interface ActivityAPI {
   @ApiImplicitParams(
       @ApiImplicitParam(name = "id", paramType = "path", required = true, value = "Activity id"))
   @PutMapping("/{id}")
-  ActivityDTO updateActivity(@PathVariable String id, @RequestBody ActivityDTO activityDTO);
+  ActivityDTO updateActivity(
+      @PathVariable String id, @Validated(OnUpdate.class) @RequestBody ActivityDTO activityDTO);
 
   @ApiOperation("Delete activity")
   @ResponseStatus(HttpStatus.OK)

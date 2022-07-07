@@ -61,20 +61,28 @@ public class UserServiceImpl implements UserService {
   public UserDTO addActivity(String login, String id) {
     log.info("Service: add activity {} for user: {}", id, login);
     User user = userRepository.getUserByLogin(login);
-    if (activityRepository.isActivityExists(id)) {
-      if (user.getActivities() == null) {
+    if (!activityRepository.isActivityExists(id))
+      throw new EntityNotFoundException("Activity not found");
+    if (user.getActivities() == null) {
         user.setActivities(new ArrayList<>());
-      }
-      if (user.getActivities().stream().noneMatch(activity -> activity.getId().equals(id))) {
+    }
+    if (!user.hasActivity(id)) {
         user.getActivities().add(activityRepository.getActivityById(id).clone());
         return UserMapper.instance.mapToUserDTO(user);
-      } else throw new EntityExistsException("User already follows this activity");
-    } else throw new EntityNotFoundException("Activity not found");
+    } else throw new EntityExistsException("User already follows this activity");
   }
 
   @Override
   public List<ActivityDTO> getUserActivities(String login) {
     log.info("Service: get activities for user: {}", login);
     return getUserByLogin(login).getActivities();
+  }
+
+  @Override
+  public UserDTO setSpentTime(String login, String id, ActivityDTO activityDTO) {
+    log.info("Service: user {} set spent time to activity {}", login, id);
+    User user = userRepository.getUserByLogin(login);
+    user.getActivityById(id).setSpentTime(activityDTO.getSpentTime());
+    return UserMapper.instance.mapToUserDTO(user);
   }
 }

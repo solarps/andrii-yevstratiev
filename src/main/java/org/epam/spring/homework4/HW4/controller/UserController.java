@@ -48,6 +48,12 @@ public class UserController implements UserApi {
     return userService.addActivity(login, id);
   }
 
+  @Override
+  public UserDTO setActivityTime(String login, String id, ActivityDTO activityDTO) {
+    log.info("Controller: user {} set spent time to activity {}", login, id);
+    return userService.setSpentTime(login, id, activityDTO);
+  }
+
   public List<ActivityDTO> userActivities(String login) {
     log.info("Controller: get all user activities by user login: {}", login);
     return userService.getUserActivities(login);

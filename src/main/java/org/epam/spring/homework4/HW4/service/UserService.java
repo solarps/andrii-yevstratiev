@@ -19,4 +19,6 @@ public interface UserService {
   UserDTO addActivity(String login, String id);
 
   List<ActivityDTO> getUserActivities(String login);
+
+  UserDTO setSpentTime(String login, String id, ActivityDTO activityDTO);
 }

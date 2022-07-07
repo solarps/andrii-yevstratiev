@@ -4,29 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f47b786-c2ce-4102-a715-0b2fe4b1ebed" name="Changes" comment="added actuator and configure '/info' endpoint, change root directory">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/api/ActivityAPI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/api/UserApi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/api/config/SwaggerConfig.java" afterDir="false" />
+    <list default="true" id="1f47b786-c2ce-4102-a715-0b2fe4b1ebed" name="Changes" comment="add and implement swagger and fix code style">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/validation/SpentTimeConstraint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/validation/SpentTimeValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/validation/group/OnSetTime.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/ActivityController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/ActivityController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/api/ActivityAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/api/ActivityAPI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/api/UserApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/api/UserApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/api/config/SwaggerConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/api/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/ActivityDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/ActivityDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/UserDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/validation/ErrorHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/validation/ErrorHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/ActivityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/ActivityService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/validategroup/OnCreate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/validation/group/OnCreate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/validategroup/OnUpdate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/validation/group/OnUpdate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/exception/EntityExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/exception/EntityExistsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/impl/ActivityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/impl/ActivityServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/mapper/ActivityMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/mapper/ActivityMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/repository/ActivityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/repository/ActivityRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/repository/impl/ActivityRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/repository/impl/ActivityRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/repository/impl/UserRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/repository/impl/UserRepositoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/model/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,8 +32,9 @@
         <option value="spring-beans.schema" />
         <option value="Tag Library Descriptor" />
         <option value="Enum" />
-        <option value="Interface" />
+        <option value="AnnotationType" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -84,6 +78,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.epam.spring.homework4.HW4.controller.dto.validation" />
       <recent name="org.epam.spring.homework4.HW4.controller.api" />
       <recent name="org.epam.spring.homework3.HW3.repository.exception" />
       <recent name="org.epam.spring.homework3.HW3.service.model" />
@@ -130,7 +125,8 @@
       <workItem from="1657041816061" duration="21000" />
       <workItem from="1657041856505" duration="491000" />
       <workItem from="1657178696052" duration="9693000" />
-      <workItem from="1657193455808" duration="2045000" />
+      <workItem from="1657193455808" duration="2151000" />
+      <workItem from="1657204703222" duration="5809000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1656523769715</created>
@@ -216,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657133647147</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="add and implement swagger and fix code style">
+      <created>1657196113273</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1657196113273</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,6 +258,7 @@
     <MESSAGE value="added custom exceptions and error handler" />
     <MESSAGE value="changed root project directory" />
     <MESSAGE value="added actuator and configure '/info' endpoint, change root directory" />
-    <option name="LAST_COMMIT_MESSAGE" value="added actuator and configure '/info' endpoint, change root directory" />
+    <MESSAGE value="add and implement swagger and fix code style" />
+    <option name="LAST_COMMIT_MESSAGE" value="add and implement swagger and fix code style" />
   </component>
 </project>
