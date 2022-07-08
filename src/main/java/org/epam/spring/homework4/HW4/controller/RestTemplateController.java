@@ -2,11 +2,9 @@ package org.epam.spring.homework4.HW4.controller;
 
 import lombok.AllArgsConstructor;
 import org.epam.spring.homework4.HW4.controller.dto.UserDTO;
-import org.epam.spring.homework4.HW4.controller.dto.validation.group.OnUpdate;
 import org.epam.spring.homework4.HW4.service.impl.RestTemplateService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
