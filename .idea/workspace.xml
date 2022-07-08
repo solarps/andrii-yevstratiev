@@ -4,11 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1f47b786-c2ce-4102-a715-0b2fe4b1ebed" name="Changes" comment="added multilingual support for exception messages">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/RestTemplateController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/api/config/RestTemplateConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/impl/RestTemplateService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="1f47b786-c2ce-4102-a715-0b2fe4b1ebed" name="Changes" comment="optimized imports">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/ActivityDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/ActivityDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/UserDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/controller/dto/UserDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/impl/ActivityServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/impl/ActivityServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/repository/impl/ActivityRepositoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/epam/spring/homework4/HW4/service/repository/impl/ActivityRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/epam/spring/homework4/HW4/ApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/epam/spring/homework4/HW4/ApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +119,7 @@
       <workItem from="1657178696052" duration="9693000" />
       <workItem from="1657193455808" duration="2151000" />
       <workItem from="1657204703222" duration="15575000" />
-      <workItem from="1657269954828" duration="9889000" />
+      <workItem from="1657269954828" duration="10309000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <created>1656523769715</created>
@@ -224,7 +226,21 @@
       <option name="project" value="LOCAL" />
       <updated>1657218265439</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="added rest template">
+      <created>1657285689168</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1657285689168</updated>
+    </task>
+    <task id="LOCAL-00017" summary="optimized imports">
+      <created>1657285735025</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1657285735025</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -266,7 +282,9 @@
     <MESSAGE value="add and implement swagger and fix code style" />
     <MESSAGE value="added custom SpentTimeValidator using ConstraintValidator" />
     <MESSAGE value="added multilingual support for exception messages" />
-    <option name="LAST_COMMIT_MESSAGE" value="added multilingual support for exception messages" />
+    <MESSAGE value="added rest template" />
+    <MESSAGE value="optimized imports" />
+    <option name="LAST_COMMIT_MESSAGE" value="optimized imports" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -3,12 +3,12 @@ package org.epam.spring.homework4.HW4.service.impl;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.epam.spring.homework4.HW4.controller.dto.ActivityDTO;
-import org.epam.spring.homework4.HW4.service.repository.UserRepository;
 import org.epam.spring.homework4.HW4.service.ActivityService;
 import org.epam.spring.homework4.HW4.service.mapper.ActivityMapper;
 import org.epam.spring.homework4.HW4.service.model.Activity;
-import org.epam.spring.homework4.HW4.service.repository.ActivityRepository;
 import org.epam.spring.homework4.HW4.service.model.User;
+import org.epam.spring.homework4.HW4.service.repository.ActivityRepository;
+import org.epam.spring.homework4.HW4.service.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

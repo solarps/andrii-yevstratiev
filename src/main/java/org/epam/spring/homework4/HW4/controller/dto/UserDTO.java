@@ -25,6 +25,8 @@ public class UserDTO {
       groups = {OnCreate.class, OnUpdate.class})
   private String login;
 
-  @Null(message = "activities.null", groups = {OnCreate.class,OnUpdate.class})
+  @Null(
+      message = "activities.null",
+      groups = {OnCreate.class, OnUpdate.class})
   private List<ActivityDTO> activities;
 }

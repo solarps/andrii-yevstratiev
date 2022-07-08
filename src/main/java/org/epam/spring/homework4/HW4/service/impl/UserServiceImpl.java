@@ -64,11 +64,11 @@ public class UserServiceImpl implements UserService {
     if (!activityRepository.isActivityExists(id))
       throw new EntityNotFoundException("Activity not found");
     if (user.getActivities() == null) {
-        user.setActivities(new ArrayList<>());
+      user.setActivities(new ArrayList<>());
     }
     if (!user.hasActivity(id)) {
-        user.getActivities().add(activityRepository.getActivityById(id).clone());
-        return UserMapper.instance.mapToUserDTO(user);
+      user.getActivities().add(activityRepository.getActivityById(id).clone());
+      return UserMapper.instance.mapToUserDTO(user);
     } else throw new EntityExistsException("User already follows this activity");
   }
 

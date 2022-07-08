@@ -18,7 +18,7 @@ public class ActivityDTO {
   private String id;
 
   @NotBlank(
-      message ="{name.not.empty}",
+      message = "{name.not.empty}",
       groups = {OnCreate.class, OnUpdate.class})
   @Null(message = "name.null", groups = OnSetTime.class)
   private String name;

@@ -1,10 +1,10 @@
 package org.epam.spring.homework4.HW4.service.repository.impl;
 
 import lombok.extern.slf4j.Slf4j;
-import org.epam.spring.homework4.HW4.service.repository.ActivityRepository;
 import org.epam.spring.homework4.HW4.service.exception.EntityExistsException;
 import org.epam.spring.homework4.HW4.service.exception.EntityNotFoundException;
 import org.epam.spring.homework4.HW4.service.model.Activity;
+import org.epam.spring.homework4.HW4.service.repository.ActivityRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
