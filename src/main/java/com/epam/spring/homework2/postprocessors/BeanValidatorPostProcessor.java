@@ -7,8 +7,10 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class BeanValidatorPostProcessor implements BeanPostProcessor {
-  public Object postProcessBeforeInitialization(Object bean, String beanName)
-      throws BeansException {
+  private static final int DEFAULT_VALUE = Integer.MAX_VALUE;
+  private static final String DEFAULT_NAME = "DEFAULT";
+
+  public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
     if (bean instanceof AbstractBean) {
       validate((AbstractBean) bean);
     }
@@ -17,14 +19,10 @@ public class BeanValidatorPostProcessor implements BeanPostProcessor {
 
   private void validate(AbstractBean abstractBean) {
     if (abstractBean.getName() == null) {
-      abstractBean.setName("Default");
+      abstractBean.setName(DEFAULT_NAME);
     }
     if (abstractBean.getValue() == null || abstractBean.getValue() < 0) {
-      abstractBean.setValue(1);
+      abstractBean.setValue(DEFAULT_VALUE);
     }
-  }
-
-  public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-    return bean;
   }
 }
