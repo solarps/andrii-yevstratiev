@@ -4,10 +4,8 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
-import org.epam.spring.homework4.HW4.controller.dto.ActivityDTO;
 import org.epam.spring.homework4.HW4.controller.dto.UserDTO;
 import org.epam.spring.homework4.HW4.controller.dto.validation.group.OnCreate;
-import org.epam.spring.homework4.HW4.controller.dto.validation.group.OnSetTime;
 import org.epam.spring.homework4.HW4.controller.dto.validation.group.OnUpdate;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -47,35 +45,7 @@ public interface UserApi {
   @ApiOperation("Delete user")
   @ResponseStatus(HttpStatus.OK)
   @ApiImplicitParams(
-      @ApiImplicitParam(name = "login", paramType = "path", required = true, value = "User login"))
-  @DeleteMapping("/{login}")
-  ResponseEntity<Void> deleteUser(@PathVariable String login);
-
-  @ApiOperation("Add activity for user")
-  @ResponseStatus(HttpStatus.OK)
-  @ApiImplicitParams({
-    @ApiImplicitParam(name = "login", paramType = "path", required = true, value = "User login"),
-    @ApiImplicitParam(name = "id", paramType = "path", required = true, value = "Activity id")
-  })
-  @PutMapping("/{login}/activity/{id}")
-  UserDTO addActivityForUser(@PathVariable String login, @PathVariable String id);
-
-  @ApiOperation("Set spent time")
-  @ResponseStatus(HttpStatus.OK)
-  @ApiImplicitParams({
-    @ApiImplicitParam(name = "login", paramType = "path", required = true, value = "User login"),
-    @ApiImplicitParam(name = "id", paramType = "path", required = true, value = "Activity id")
-  })
-  @PutMapping("/{login}/activity/{id}/setTime")
-  UserDTO setActivityTime(
-      @PathVariable String login,
-      @PathVariable String id,
-      @Validated(OnSetTime.class) @RequestBody ActivityDTO activityDTO);
-
-  @ApiOperation("Get user activities")
-  @ResponseStatus(HttpStatus.OK)
-  @ApiImplicitParams(
-      @ApiImplicitParam(name = "login", paramType = "path", required = true, value = "User login"))
-  @GetMapping("/{login}/activity")
-  List<ActivityDTO> userActivities(@PathVariable String login);
+      @ApiImplicitParam(name = "id", paramType = "path", required = true, value = "User id"))
+  @DeleteMapping("/{id}")
+  ResponseEntity<Void> deleteUser(@PathVariable Long id);
 }

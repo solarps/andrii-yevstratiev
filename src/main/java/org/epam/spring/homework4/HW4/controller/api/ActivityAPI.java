@@ -32,7 +32,7 @@ public interface ActivityAPI {
   @ApiImplicitParams(
       @ApiImplicitParam(name = "id", paramType = "path", required = true, value = "Activity id"))
   @GetMapping("/{id}")
-  ActivityDTO getActivityById(@PathVariable String id);
+  ActivityDTO getActivityById(@PathVariable Long id);
 
   @ApiOperation("Update activity")
   @ResponseStatus(HttpStatus.OK)
@@ -40,12 +40,12 @@ public interface ActivityAPI {
       @ApiImplicitParam(name = "id", paramType = "path", required = true, value = "Activity id"))
   @PutMapping("/{id}")
   ActivityDTO updateActivity(
-      @PathVariable String id, @Validated(OnUpdate.class) @RequestBody ActivityDTO activityDTO);
+      @PathVariable Long id, @Validated(OnUpdate.class) @RequestBody ActivityDTO activityDTO);
 
   @ApiOperation("Delete activity")
   @ResponseStatus(HttpStatus.OK)
   @ApiImplicitParams(
       @ApiImplicitParam(name = "id", paramType = "path", required = true, value = "Activity id"))
   @DeleteMapping("/{id}")
-  ResponseEntity<Void> deleteActivity(@PathVariable String id);
+  ResponseEntity<Void> deleteActivity(@PathVariable Long id);
 }

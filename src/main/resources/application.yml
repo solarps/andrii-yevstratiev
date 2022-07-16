@@ -9,6 +9,15 @@ management:
     env:
       enabled: true
 spring:
+
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+  datasource:
+    url: jdbc:postgresql://localhost:5432/TimeKeeping
+    username: postgres
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQL10Dialect
+    database: postgresql

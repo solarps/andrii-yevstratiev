@@ -1,5 +1,6 @@
 package org.epam.spring.homework4.HW4.controller.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import org.epam.spring.homework4.HW4.controller.dto.validation.group.OnCreate;
 import org.epam.spring.homework4.HW4.controller.dto.validation.group.OnUpdate;
@@ -9,8 +10,13 @@ import javax.validation.constraints.Null;
 import javax.validation.constraints.Pattern;
 import java.util.List;
 
+import static com.fasterxml.jackson.annotation.JsonProperty.Access.READ_ONLY;
+
 @Data
 public class UserDTO {
+  @JsonProperty(access = READ_ONLY)
+  private Long id;
+
   @NotBlank(
       message = "{name.not.empty}",
       groups = {OnCreate.class, OnUpdate.class})
@@ -28,5 +34,5 @@ public class UserDTO {
   @Null(
       message = "activities.null",
       groups = {OnCreate.class, OnUpdate.class})
-  private List<ActivityDTO> activities;
+  private List<SubscriptionDTO> subscriptions;
 }

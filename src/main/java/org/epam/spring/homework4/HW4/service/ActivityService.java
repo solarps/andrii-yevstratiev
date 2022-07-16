@@ -7,11 +7,11 @@ import java.util.List;
 public interface ActivityService {
   ActivityDTO createActivity(ActivityDTO activityDTO);
 
-  ActivityDTO getActivity(String id);
+  ActivityDTO getActivity(Long id);
 
   List<ActivityDTO> listActivity();
 
-  ActivityDTO updateActivity(String id, ActivityDTO activityDTO);
+  ActivityDTO updateActivity(Long id, ActivityDTO activityDTO);
 
-  void deleteActivity(String id);
+  void deleteActivity(Long id);
 }

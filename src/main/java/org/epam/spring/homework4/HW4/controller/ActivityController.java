@@ -26,18 +26,18 @@ public class ActivityController implements ActivityAPI {
     return activityService.createActivity(activityDTO);
   }
 
-  public ActivityDTO getActivityById(String id) {
+  public ActivityDTO getActivityById(Long id) {
     log.info("Controller: get activity by id:{}", id);
     return activityService.getActivity(id);
   }
 
-  public ActivityDTO updateActivity(String id, ActivityDTO activityDTO) {
+  public ActivityDTO updateActivity(Long id, ActivityDTO activityDTO) {
     log.info("Controller: update activity by id: {}", id);
     activityDTO.setId(id);
     return activityService.updateActivity(id, activityDTO);
   }
 
-  public ResponseEntity<Void> deleteActivity(String id) {
+  public ResponseEntity<Void> deleteActivity(Long id) {
     log.info("Controller: delete activity by id: {}", id);
     activityService.deleteActivity(id);
     return ResponseEntity.noContent().build();
