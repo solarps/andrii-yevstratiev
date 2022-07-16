@@ -35,10 +35,7 @@ public class UserRepositoryImpl implements UserRepository {
     if (!users.containsKey(user.getLogin())) {
       users.put(user.getLogin(), user);
       return user;
-    } else {
-
-      throw new ResponseStatusException(HttpStatus.I_AM_A_TEAPOT);
-    }
+    } else throw new ResponseStatusException(HttpStatus.CONFLICT);
   }
 
   @Override
