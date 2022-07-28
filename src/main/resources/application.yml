@@ -1,0 +1,14 @@
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+  info:
+    java:
+      enabled: true
+    env:
+      enabled: true
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
