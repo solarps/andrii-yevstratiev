@@ -30,7 +30,7 @@ public class ActivityDTO {
   private String spentTime;
 
   @NotBlank(
-      message = "{name.not.empty}",
+      message = "{category.not.empty}",
       groups = {OnCreate.class, OnUpdate.class})
   @Null(message = "{category.null}", groups = OnSetTime.class)
   private String category;
