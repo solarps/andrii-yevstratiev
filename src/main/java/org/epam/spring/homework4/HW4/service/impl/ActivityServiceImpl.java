@@ -9,6 +9,7 @@ import org.epam.spring.homework4.HW4.service.ActivityService;
 import org.epam.spring.homework4.HW4.service.exception.EntityNotFoundException;
 import org.epam.spring.homework4.HW4.service.mapper.ActivityMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -29,8 +30,8 @@ public class ActivityServiceImpl implements ActivityService {
   @Override
   public ActivityDTO getActivity(Long id) {
     log.info("Service: get activity by id: {}", id);
-    return ActivityMapper.instance.mapToActivityDTO(
-        activityRepository.findById(id).orElseThrow(EntityNotFoundException::new));
+    Activity activity = activityRepository.findById(id).orElseThrow(EntityNotFoundException::new);
+    return ActivityMapper.instance.mapToActivityDTO(activity);
   }
 
   @Override
