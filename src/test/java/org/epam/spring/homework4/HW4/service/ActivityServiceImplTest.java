@@ -7,7 +7,6 @@ import org.epam.spring.homework4.HW4.service.exception.EntityNotFoundException;
 import org.epam.spring.homework4.HW4.service.impl.ActivityServiceImpl;
 import org.epam.spring.homework4.HW4.service.mapper.ActivityMapperImpl;
 import org.epam.spring.homework4.HW4.util.TestActivityDataUtil;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -19,6 +18,7 @@ import java.util.Optional;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasItem;
+import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -28,13 +28,13 @@ class ActivityServiceImplTest {
   @Mock private ActivityRepository activityRepository;
 
   @Test
-  void createActivity() {
+  void createActivityTest() {
     ActivityDTO activityDTO = TestActivityDataUtil.createActivityDTO();
     Activity activity = TestActivityDataUtil.createActivity();
 
     when(activityRepository.save(activity)).thenReturn(activity);
 
-    Assertions.assertEquals(activityDTO, activityService.createActivity(activityDTO));
+    assertEquals(activityDTO, activityService.createActivity(activityDTO));
     verify(activityRepository,times(1)).save(activity);
   }
 
@@ -45,7 +45,7 @@ class ActivityServiceImplTest {
 
     ActivityDTO activityDTO = activityService.getActivity(activity.getId());
 
-    Assertions.assertEquals(activityDTO.getId(), activity.getId());
+    assertEquals(activityDTO.getId(), activity.getId());
     verify(activityRepository,times(1)).findById(activity.getId());
   }
 
@@ -54,12 +54,12 @@ class ActivityServiceImplTest {
     when(activityRepository.findById(any()))
         .thenThrow(EntityNotFoundException.class);
 
-    Assertions.assertThrows(EntityNotFoundException.class, () -> activityService.getActivity(1L));
+    assertThrows(EntityNotFoundException.class, () -> activityService.getActivity(1L));
     verify(activityRepository,times(1)).findById(any());
   }
 
   @Test
-  void listActivity() {
+  void listActivityTest() {
     List<Activity> list = TestActivityDataUtil.createActivityList();
     when(activityRepository.findAll()).thenReturn(list);
 
@@ -77,7 +77,7 @@ class ActivityServiceImplTest {
     when(activityRepository.findById(any())).thenReturn(Optional.of(activity));
     when(activityRepository.save(repActivity)).thenReturn(repActivity);
 
-    Assertions.assertEquals(
+    assertEquals(
         activityService.updateActivity(1L, activityDTO),
         ActivityMapperImpl.instance.mapToActivityDTO(activity));
     verify(activityRepository,times(1)).findById(any());
@@ -89,14 +89,14 @@ class ActivityServiceImplTest {
     when(activityRepository.findById(any()))
         .thenThrow(EntityNotFoundException.class);
 
-    Assertions.assertThrows(
+    assertThrows(
         EntityNotFoundException.class,
         () -> activityService.updateActivity(1L, TestActivityDataUtil.createActivityDTO()));
     verify(activityRepository,times(1)).findById(any());
   }
 
   @Test
-  void deleteActivity() {
+  void deleteActivityTest() {
     doNothing().when(activityRepository).deleteById(any());
 
     activityService.deleteActivity(1L);

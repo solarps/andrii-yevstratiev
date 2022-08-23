@@ -3,6 +3,8 @@ package org.epam.spring.homework4.HW4.util;
 import org.epam.spring.homework4.HW4.controller.dto.UserDTO;
 import org.epam.spring.homework4.HW4.persistance.entity.User;
 
+import java.util.List;
+
 public class TestUserDataUtil {
 
   public static final Long ID = 1L;
@@ -15,5 +17,9 @@ public class TestUserDataUtil {
 
   public static UserDTO createUserDTO() {
     return UserDTO.builder().id(ID).name(NAME).login(LOGIN).build();
+  }
+
+  public static List<User> createUserList(){
+    return List.of(createUser(),createUser());
   }
 }
