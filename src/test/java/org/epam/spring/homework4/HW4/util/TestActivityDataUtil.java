@@ -22,4 +22,8 @@ public class TestActivityDataUtil {
   public static List<Activity> createActivityList() {
     return List.of(createActivity(), createActivity());
   }
+
+  public static List<ActivityDTO> createActivityDTOList() {
+    return List.of(createActivityDTO(), createActivityDTO());
+  }
 }

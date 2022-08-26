@@ -43,7 +43,7 @@ public interface ActivityAPI {
       @PathVariable Long id, @Validated(OnUpdate.class) @RequestBody ActivityDTO activityDTO);
 
   @ApiOperation("Delete activity")
-  @ResponseStatus(HttpStatus.OK)
+  @ResponseStatus(HttpStatus.NO_CONTENT)
   @ApiImplicitParams(
       @ApiImplicitParam(name = "id", paramType = "path", required = true, value = "Activity id"))
   @DeleteMapping("/{id}")
