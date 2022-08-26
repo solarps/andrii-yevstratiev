@@ -29,7 +29,7 @@ class ActivityControllerTest {
   @Autowired private ObjectMapper objectMapper;
 
   @Test
-  void getAllActivity() throws Exception {
+  void getAllActivityTest() throws Exception {
     List<ActivityDTO> activityList = TestActivityDataUtil.createActivityDTOList();
 
     when(activityService.listActivity()).thenReturn(activityList);
@@ -47,7 +47,7 @@ class ActivityControllerTest {
   }
 
   @Test
-  void createActivity() throws Exception {
+  void createActivityTest() throws Exception {
     ActivityDTO activityDTO = TestActivityDataUtil.createActivityDTO();
     when(activityService.createActivity(any())).thenReturn(activityDTO);
 
@@ -66,7 +66,7 @@ class ActivityControllerTest {
   }
 
   @Test
-  void getActivityById() throws Exception {
+  void getActivityByIdTest() throws Exception {
     Long ID = 3L;
     ActivityDTO activityDTO = TestActivityDataUtil.createActivityDTO();
     activityDTO.setId(ID);
@@ -83,7 +83,7 @@ class ActivityControllerTest {
   }
 
   @Test
-  void updateActivity() throws Exception {
+  void updateActivityTest() throws Exception {
     long ID = 1L;
     ActivityDTO activityDTO = TestActivityDataUtil.createActivityDTO();
     ActivityDTO oldActivityDTO = TestActivityDataUtil.createActivityDTO();
@@ -105,7 +105,7 @@ class ActivityControllerTest {
   }
 
   @Test
-  void deleteActivity() throws Exception {
+  void deleteActivityTest() throws Exception {
     long ID = 1L;
     doNothing().when(activityService).deleteActivity(any());
 

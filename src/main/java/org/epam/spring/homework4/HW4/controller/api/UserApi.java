@@ -43,7 +43,7 @@ public interface UserApi {
       @PathVariable String login, @Validated(OnUpdate.class) @RequestBody UserDTO UserDTO);
 
   @ApiOperation("Delete user")
-  @ResponseStatus(HttpStatus.OK)
+  @ResponseStatus(HttpStatus.NO_CONTENT)
   @ApiImplicitParams(
       @ApiImplicitParam(name = "id", paramType = "path", required = true, value = "User id"))
   @DeleteMapping("/{id}")

@@ -9,7 +9,7 @@ public class TestUserDataUtil {
 
   public static final Long ID = 1L;
   public static final String NAME = "Andrii";
-  public static final String LOGIN = "Admin_123";
+  public static final String LOGIN = "Admin123";
 
   public static User createUser() {
     return User.builder().id(ID).name(NAME).login(LOGIN).build();
@@ -21,5 +21,9 @@ public class TestUserDataUtil {
 
   public static List<User> createUserList(){
     return List.of(createUser(),createUser());
+  }
+
+  public static List<UserDTO> createUserDTOList() {
+    return List.of(createUserDTO(), createUserDTO());
   }
 }

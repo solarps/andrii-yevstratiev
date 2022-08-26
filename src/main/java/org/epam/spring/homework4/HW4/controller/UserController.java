@@ -31,9 +31,9 @@ public class UserController implements UserApi {
     return userService.createUser(userDTO);
   }
 
-  public UserDTO updateUser(String oldLogin, UserDTO userDTO) {
-    log.info("Controller: update user by login: {}, new user:{}", oldLogin, userDTO);
-    return userService.updateUser(oldLogin, userDTO);
+  public UserDTO updateUser(String login, UserDTO userDTO) {
+    log.info("Controller: update user by login: {}, new user:{}", login, userDTO);
+    return userService.updateUser(login, userDTO);
   }
 
   public ResponseEntity<Void> deleteUser(Long id) {
