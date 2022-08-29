@@ -34,4 +34,8 @@ public class TestSubscriptionDataUtil {
   public static List<Subscription> createSubList() {
     return List.of(createSub(), createSub());
   }
+
+  public static List<SubscriptionDTO> createSubDTOList() {
+    return List.of(createSubDTO(), createSubDTO());
+  }
 }

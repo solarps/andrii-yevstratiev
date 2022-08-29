@@ -57,7 +57,7 @@ public interface SubscriptionAPI {
       @RequestBody SpentTimeDTO spentTimeDTO);
 
   @ApiOperation("Delete sub")
-  @ResponseStatus(HttpStatus.OK)
+  @ResponseStatus(HttpStatus.NO_CONTENT)
   @ApiImplicitParams({
     @ApiImplicitParam(name = "login", paramType = "path", required = true, value = "User login"),
     @ApiImplicitParam(
