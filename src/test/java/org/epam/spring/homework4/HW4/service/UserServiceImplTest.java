@@ -26,7 +26,6 @@ import static org.mockito.Mockito.*;
 class UserServiceImplTest {
 
   @InjectMocks private UserServiceImpl userService;
-
   @Mock private UserRepository userRepository;
 
   @Test
@@ -97,6 +96,6 @@ class UserServiceImplTest {
 
     userService.deleteUser(any());
 
-    verify(userRepository,times(1)).deleteById(any());
+    verify(userRepository, times(1)).deleteById(any());
   }
 }
