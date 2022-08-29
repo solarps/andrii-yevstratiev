@@ -5,7 +5,6 @@ import org.epam.spring.homework4.HW4.persistance.entity.Subscription;
 import org.epam.spring.homework4.HW4.persistance.repository.SubscriptionRepository;
 import org.epam.spring.homework4.HW4.service.impl.SubscriptionServiceImpl;
 import org.epam.spring.homework4.HW4.util.TestSubscriptionDataUtil;
-import org.hamcrest.Matchers;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -82,8 +81,7 @@ class SubscriptionServiceImplTest {
     when(subscriptionRepository.findAll()).thenReturn(TestSubscriptionDataUtil.createSubList());
 
     assertThat(
-        subscriptionService.getAllSubscription(),
-        hasItem(TestSubscriptionDataUtil.createSubDTO()));
+        subscriptionService.getAllSubscription(), hasItem(TestSubscriptionDataUtil.createSubDTO()));
     verify(subscriptionRepository, times(1)).findAll();
   }
 }

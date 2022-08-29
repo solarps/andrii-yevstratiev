@@ -9,7 +9,6 @@ import org.epam.spring.homework4.HW4.service.ActivityService;
 import org.epam.spring.homework4.HW4.service.exception.EntityNotFoundException;
 import org.epam.spring.homework4.HW4.service.mapper.ActivityMapper;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 

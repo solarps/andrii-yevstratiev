@@ -18,7 +18,8 @@ import java.util.Optional;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.hasItem;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
 @ExtendWith(MockitoExtension.class)
@@ -35,7 +36,7 @@ class ActivityServiceImplTest {
     when(activityRepository.save(activity)).thenReturn(activity);
 
     assertEquals(activityDTO, activityService.createActivity(activityDTO));
-    verify(activityRepository,times(1)).save(activity);
+    verify(activityRepository, times(1)).save(activity);
   }
 
   @Test
@@ -46,16 +47,15 @@ class ActivityServiceImplTest {
     ActivityDTO activityDTO = activityService.getActivity(activity.getId());
 
     assertEquals(activityDTO.getId(), activity.getId());
-    verify(activityRepository,times(1)).findById(activity.getId());
+    verify(activityRepository, times(1)).findById(activity.getId());
   }
 
   @Test
   void getActivityNegativeCase() {
-    when(activityRepository.findById(any()))
-        .thenThrow(EntityNotFoundException.class);
+    when(activityRepository.findById(any())).thenThrow(EntityNotFoundException.class);
 
     assertThrows(EntityNotFoundException.class, () -> activityService.getActivity(1L));
-    verify(activityRepository,times(1)).findById(any());
+    verify(activityRepository, times(1)).findById(any());
   }
 
   @Test
@@ -64,7 +64,7 @@ class ActivityServiceImplTest {
     when(activityRepository.findAll()).thenReturn(list);
 
     assertThat(activityService.listActivity(), hasItem(TestActivityDataUtil.createActivityDTO()));
-    verify(activityRepository,times(1)).findAll();
+    verify(activityRepository, times(1)).findAll();
   }
 
   @Test
@@ -80,19 +80,18 @@ class ActivityServiceImplTest {
     assertEquals(
         activityService.updateActivity(1L, activityDTO),
         ActivityMapperImpl.instance.mapToActivityDTO(activity));
-    verify(activityRepository,times(1)).findById(any());
-    verify(activityRepository,times(1)).save(repActivity);
+    verify(activityRepository, times(1)).findById(any());
+    verify(activityRepository, times(1)).save(repActivity);
   }
 
   @Test
   void updateActivityNotFoundCase() {
-    when(activityRepository.findById(any()))
-        .thenThrow(EntityNotFoundException.class);
+    when(activityRepository.findById(any())).thenThrow(EntityNotFoundException.class);
 
     assertThrows(
         EntityNotFoundException.class,
         () -> activityService.updateActivity(1L, TestActivityDataUtil.createActivityDTO()));
-    verify(activityRepository,times(1)).findById(any());
+    verify(activityRepository, times(1)).findById(any());
   }
 
   @Test

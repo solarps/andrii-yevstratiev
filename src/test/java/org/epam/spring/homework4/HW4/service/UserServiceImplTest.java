@@ -97,6 +97,6 @@ class UserServiceImplTest {
 
     userService.deleteUser(any());
 
-    verify(userRepository,times(1)).deleteById(any());
+    verify(userRepository, times(1)).deleteById(any());
   }
 }

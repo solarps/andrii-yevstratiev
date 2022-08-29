@@ -19,8 +19,8 @@ public class TestUserDataUtil {
     return UserDTO.builder().id(ID).name(NAME).login(LOGIN).build();
   }
 
-  public static List<User> createUserList(){
-    return List.of(createUser(),createUser());
+  public static List<User> createUserList() {
+    return List.of(createUser(), createUser());
   }
 
   public static List<UserDTO> createUserDTOList() {
